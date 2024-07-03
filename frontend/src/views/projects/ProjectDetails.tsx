@@ -13,7 +13,7 @@ export default function ProjectDetails (){
     const projectId = params.projectId!
 
     const {data, isLoading, isError} = useQuery({
-        queryKey: ['project', {projectId}],
+        queryKey: ['project', projectId],
         queryFn: () => getProjectByIdAPi(projectId),
         retry: false
     })

@@ -34,7 +34,7 @@ export default function EditTaskModal({ data, taskId }: EditTaskModalInterface) 
             toast.error(error.message)
         },
         onSuccess: (data) =>{
-            queryclient.invalidateQueries({queryKey: ['editProject', {projectId}]})
+            queryclient.invalidateQueries({queryKey: ['editProject', projectId]})
             queryclient.invalidateQueries({queryKey: ['task']})
             toast.success(data)
             reset()
